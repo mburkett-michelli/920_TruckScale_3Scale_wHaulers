@@ -1,0 +1,156 @@
+-------------------------------------------------
+-- Used with iRev Configuration File
+-- F:\Baseline_Software\920i\Truck-Scale-3Scale\Truck_Scale.920
+-------------------------------------------------
+
+
+-- Scale Aliases
+Scale1   : constant integer := 1;
+Scale2   : constant integer := 2;
+Scale3   : constant integer := 3;
+Scale4   : constant integer := 4;
+
+-- Setpoint Aliases
+SP1      : constant integer := 1;
+SP2      : constant integer := 2;
+
+-- Widget Aliases
+Lbl5S1   : constant integer := 2;
+Lbl6S1   : constant integer := 3;
+Lbl7S1   : constant integer := 4;
+Lbl8S1   : constant integer := 5;
+Lbl12S1  : constant integer := 6;
+Lbl16S1  : constant integer := 7;
+Lbl17S1  : constant integer := 8;
+Lbl19S1  : constant integer := 9;
+Lbl20S1  : constant integer := 10;
+Lbl11S1  : constant integer := 11;
+Lbl13S1  : constant integer := 12;
+Lbl1S2   : constant integer := 13;
+Lbl2S2   : constant integer := 14;
+Lbl3S2   : constant integer := 15;
+Lbl4S2   : constant integer := 16;
+Lbl5S2   : constant integer := 17;
+Lbl6S2   : constant integer := 18;
+Lbl7S2   : constant integer := 19;
+Lbl8S2   : constant integer := 20;
+Lbl10S2  : constant integer := 21;
+Lbl11S2  : constant integer := 22;
+Lbl12S2  : constant integer := 23;
+Lbl13S2  : constant integer := 24;
+Lbl14S2  : constant integer := 25;
+Lbl15S2  : constant integer := 26;
+Lbl16S2  : constant integer := 27;
+Lbl18S2  : constant integer := 28;
+Lbl19S2  : constant integer := 29;
+Lbl20S2  : constant integer := 30;
+Lbl21S2  : constant integer := 31;
+Lbl22S2  : constant integer := 32;
+Lbl23S2  : constant integer := 33;
+Lbl24S2  : constant integer := 34;
+Lbl25S2  : constant integer := 35;
+Lbl26S2  : constant integer := 36;
+Lbl27S2  : constant integer := 37;
+Lbl28S2  : constant integer := 38;
+Lbl29S2  : constant integer := 39;
+Lbl30S2  : constant integer := 40;
+Lbl31S2  : constant integer := 41;
+Lbl32S2  : constant integer := 42;
+Lbl33S2  : constant integer := 43;
+Lbl34S2  : constant integer := 44;
+Lbl35S2  : constant integer := 45;
+Num1S1   : constant integer := 46;
+Num2S1   : constant integer := 47;
+Num3S1   : constant integer := 48;
+Sym1S1   : constant integer := 49;
+Sym2S1   : constant integer := 50;
+Sym3S1   : constant integer := 51;
+lblFront : constant integer := 52;
+LblDrive : constant integer := 53;
+LblTrail : constant integer := 54;
+Sym1S2   : constant integer := 55;
+Sym2S2   : constant integer := 56;
+Sym3S2   : constant integer := 57;
+Sym4S2   : constant integer := 58;
+Sym5S2   : constant integer := 59;
+Sym6S2   : constant integer := 60;
+Sym7S2   : constant integer := 61;
+
+-- Serial Port Aliases
+Port1    : constant integer := 1;
+Port2    : constant integer := 2;
+Port3    : constant integer := 3;
+Port4    : constant integer := 4;
+
+-- Analog Output Card Aliases
+
+-- Digital I/O Aliases
+DIOCRD0  : constant integer := 0;
+DIO0_1   : constant integer := 1;
+DIO0_2   : constant integer := 2;
+DIO0_3   : constant integer := 3;
+DIO0_4   : constant integer := 4;
+DIO0_5   : constant integer := 5;
+DIO0_6   : constant integer := 6;
+DIO0_7   : constant integer := 7;
+DIO0_8   : constant integer := 8;
+DIO0_9   : constant integer := 9;
+DIO0_10  : constant integer := 10;
+DIO0_11  : constant integer := 11;
+DIO0_12  : constant integer := 12;
+DIO0_13  : constant integer := 13;
+DIO0_14  : constant integer := 14;
+DIO0_15  : constant integer := 15;
+DIO0_16  : constant integer := 16;
+DIO0_17  : constant integer := 17;
+DIO0_18  : constant integer := 18;
+DIO0_19  : constant integer := 19;
+DIO0_20  : constant integer := 20;
+DIO0_21  : constant integer := 21;
+DIO0_22  : constant integer := 22;
+DIO0_23  : constant integer := 23;
+DIO0_24  : constant integer := 24;
+
+-- Database Type Definitions and Field Aliases
+type TruckDatabase is Database ("Truck")
+	ID       : string;
+	Pri_Wgt  : real;
+	Sec_Wgt  : real;
+	Ter_Wgt  : real;
+	TimeDate : datetime;
+	Scale    : integer;
+	Keyed    : integer;
+end database;
+
+Truck_ID          : constant integer := 1;
+Truck_Pri_Wgt     : constant integer := 2;
+Truck_Sec_Wgt     : constant integer := 3;
+Truck_Ter_Wgt     : constant integer := 4;
+Truck_TimeDate    : constant integer := 5;
+Truck_Scale       : constant integer := 6;
+Truck_Keyed       : constant integer := 7;
+
+type AxleDatabase is Database ("Axle")
+	TruckID  : string;
+	Inbound  : real;
+	Axles    : integer;
+	DateIn   : datetime;
+	Save     : string;
+	HName    : string;
+end database;
+
+Axle_TruckID      : constant integer := 1;
+Axle_Inbound      : constant integer := 2;
+Axle_Axles        : constant integer := 3;
+Axle_DateIn       : constant integer := 4;
+Axle_Save         : constant integer := 5;
+Axle_HName        : constant integer := 6;
+
+type HaulersDatabase is Database ("Haulers")
+	HName    : string;
+end database;
+
+Haulers_HName     : constant integer := 1;
+
+
+
